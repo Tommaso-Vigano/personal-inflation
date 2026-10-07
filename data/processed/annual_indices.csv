@@ -1,0 +1,601 @@
+ECOICOP_2,ECOICOP 2,TIME_PERIOD,Osservazione,category_level,parent_code
+00,Indice generale,2016,100.0,2,00
+01,Prodotti alimentari e bevande analcoliche,2016,100.0,2,01
+02,"Bevande alcoliche, tabacco e droghe",2016,102.0,2,02
+03,Abbigliamento e calzature,2016,101.0,2,03
+04,"Abitazione, acqua, elettricità, gas e altri combustibili",2016,98.0,2,04
+05,"Arredamenti, apparecchi per uso domestico e manutenzione corrente dell'abitazione",2016,100.0,2,05
+06,Sanità,2016,100.0,2,06
+07,Trasporti,2016,99.0,2,07
+08,Informazione e comunicazione,2016,99.0,2,08
+09,"Ricreazione, sport e cultura",2016,101.0,2,09
+10,Servizi di istruzione,2016,101.0,2,10
+11,Servizi di ristoranti e servizi di alloggio,2016,101.0,2,11
+12,Servizi finanziari e assicurativi,2016,99.0,2,12
+13,"Assistenza alla persona, protezione sociale e beni e servizi vari",2016,101.0,2,13
+011,Prodotti Alimentari,2016,100.0,3,01
+012,Bevande analcoliche,2016,100.0,3,01
+021,Bevande alcoliche,2016,100.0,3,02
+023,Tabacco,2016,102.0,3,02
+031,Abbigliamento,2016,101.0,3,03
+032,Calzature,2016,100.0,3,03
+041,Canoni di affitto effettivamente pagati per l'abitazione,2016,100.0,3,04
+043,"Manutenzione, riparazioni e sicurezza dell'abitazione",2016,101.0,3,04
+044,Distribuzione d'acqua e servizi vari connessi con l'abitazione,2016,102.0,3,04
+045,"Elettricità, gas e altri combustibili",2016,95.0,3,04
+051,"Mobili, arredamenti e tappeti",2016,101.0,3,05
+052,Tessili per la casa,2016,100.0,3,05
+053,Elettrodomestici,2016,100.0,3,05
+054,"Oggetti di vetro, stoviglie e utensili domestici",2016,100.0,3,05
+055,Utensili e attrezzature per la casa e il giardino,2016,100.0,3,05
+056,Beni e servizi per la manutenzione corrente dell'abitazione,2016,100.0,3,05
+061,Prodotti medicinali e sanitari,2016,100.0,3,06
+062,Servizi di cure ambulatoriali,2016,101.0,3,06
+063,Servizi di cure ospedaliere,2016,101.0,3,06
+064,Altri servizi sanitari,2016,100.0,3,06
+071,Acquisto di veicoli,2016,101.0,3,07
+072,Utilizzazione di mezzi personali di trasporto,2016,98.0,3,07
+073,Servizi di trasporto passeggeri,2016,100.0,3,07
+074,Servizi di trasporto merci,2016,102.0,3,07
+081,Apparecchiature per l'informazione e la comunicazione,2016,101.0,3,08
+083,Servizi d'informazione e comunicazione,2016,99.0,3,08
+091,Beni ricreativi durevoli,2016,103.0,3,09
+092,Altri beni ricreativi,2016,98.0,3,09
+093,Prodotti per il giardino e animali da compagnia,2016,100.0,3,09
+094,Servizi ricreativi,2016,100.0,3,09
+095,Beni culturali,2016,105.0,3,09
+096,Servizi culturali,2016,102.0,3,09
+097,"Giornali, libri e articoli di cartoleria",2016,102.0,3,09
+098,"Viaggi ""tutto compreso""",2016,102.0,3,09
+101,Istruzione prescolastica ed elementare,2016,102.0,3,10
+102,Istruzione secondaria,2016,101.0,3,10
+104,Istruzione universitaria,2016,100.0,3,10
+105,Istruzione non definita per livello,2016,101.0,3,10
+111,Servizi di ristorazione e di vendita di bevande,2016,101.0,3,11
+112,Servizi di alloggio,2016,99.0,3,11
+121,Servizi assicurativi,2016,100.0,3,12
+122,Servizi finanziari,2016,99.0,3,12
+131,Cura della persona,2016,100.0,3,13
+132,Altri effetti personali,2016,101.0,3,13
+133,Protezione sociale,2016,101.0,3,13
+139,Altri servizi,2016,101.0,3,13
+00,Indice generale,2017,101.0,2,00
+01,Prodotti alimentari e bevande analcoliche,2017,102.0,2,01
+02,"Bevande alcoliche, tabacco e droghe",2017,102.0,2,02
+03,Abbigliamento e calzature,2017,101.0,2,03
+04,"Abitazione, acqua, elettricità, gas e altri combustibili",2017,100.0,2,04
+05,"Arredamenti, apparecchi per uso domestico e manutenzione corrente dell'abitazione",2017,100.0,2,05
+06,Sanità,2017,101.0,2,06
+07,Trasporti,2017,102.0,2,07
+08,Informazione e comunicazione,2017,97.0,2,08
+09,"Ricreazione, sport e cultura",2017,102.0,2,09
+10,Servizi di istruzione,2017,96.0,2,10
+11,Servizi di ristoranti e servizi di alloggio,2017,102.0,2,11
+12,Servizi finanziari e assicurativi,2017,100.0,2,12
+13,"Assistenza alla persona, protezione sociale e beni e servizi vari",2017,102.0,2,13
+011,Prodotti Alimentari,2017,102.0,3,01
+012,Bevande analcoliche,2017,100.0,3,01
+021,Bevande alcoliche,2017,100.0,3,02
+023,Tabacco,2017,103.0,3,02
+031,Abbigliamento,2017,101.0,3,03
+032,Calzature,2017,100.0,3,03
+041,Canoni di affitto effettivamente pagati per l'abitazione,2017,101.0,3,04
+043,"Manutenzione, riparazioni e sicurezza dell'abitazione",2017,101.0,3,04
+044,Distribuzione d'acqua e servizi vari connessi con l'abitazione,2017,104.0,3,04
+045,"Elettricità, gas e altri combustibili",2017,98.0,3,04
+051,"Mobili, arredamenti e tappeti",2017,101.0,3,05
+052,Tessili per la casa,2017,100.0,3,05
+053,Elettrodomestici,2017,99.0,3,05
+054,"Oggetti di vetro, stoviglie e utensili domestici",2017,101.0,3,05
+055,Utensili e attrezzature per la casa e il giardino,2017,100.0,3,05
+056,Beni e servizi per la manutenzione corrente dell'abitazione,2017,100.0,3,05
+061,Prodotti medicinali e sanitari,2017,99.0,3,06
+062,Servizi di cure ambulatoriali,2017,101.0,3,06
+063,Servizi di cure ospedaliere,2017,101.0,3,06
+064,Altri servizi sanitari,2017,100.0,3,06
+071,Acquisto di veicoli,2017,101.0,3,07
+072,Utilizzazione di mezzi personali di trasporto,2017,101.0,3,07
+073,Servizi di trasporto passeggeri,2017,107.0,3,07
+074,Servizi di trasporto merci,2017,103.0,3,07
+081,Apparecchiature per l'informazione e la comunicazione,2017,97.0,3,08
+083,Servizi d'informazione e comunicazione,2017,98.0,3,08
+091,Beni ricreativi durevoli,2017,104.0,3,09
+092,Altri beni ricreativi,2017,97.0,3,09
+093,Prodotti per il giardino e animali da compagnia,2017,100.0,3,09
+094,Servizi ricreativi,2017,101.0,3,09
+095,Beni culturali,2017,108.0,3,09
+096,Servizi culturali,2017,102.0,3,09
+097,"Giornali, libri e articoli di cartoleria",2017,103.0,3,09
+098,"Viaggi ""tutto compreso""",2017,106.0,3,09
+101,Istruzione prescolastica ed elementare,2017,104.0,3,10
+102,Istruzione secondaria,2017,101.0,3,10
+104,Istruzione universitaria,2017,88.0,3,10
+105,Istruzione non definita per livello,2017,101.0,3,10
+111,Servizi di ristorazione e di vendita di bevande,2017,102.0,3,11
+112,Servizi di alloggio,2017,103.0,3,11
+121,Servizi assicurativi,2017,101.0,3,12
+122,Servizi finanziari,2017,98.0,3,12
+131,Cura della persona,2017,101.0,3,13
+132,Altri effetti personali,2017,102.0,3,13
+133,Protezione sociale,2017,101.0,3,13
+139,Altri servizi,2017,103.0,3,13
+00,Indice generale,2018,102.0,2,00
+01,Prodotti alimentari e bevande analcoliche,2018,103.0,2,01
+02,"Bevande alcoliche, tabacco e droghe",2018,105.0,2,02
+03,Abbigliamento e calzature,2018,101.0,2,03
+04,"Abitazione, acqua, elettricità, gas e altri combustibili",2018,103.0,2,04
+05,"Arredamenti, apparecchi per uso domestico e manutenzione corrente dell'abitazione",2018,100.0,2,05
+06,Sanità,2018,101.0,2,06
+07,Trasporti,2018,105.0,2,07
+08,Informazione e comunicazione,2018,95.0,2,08
+09,"Ricreazione, sport e cultura",2018,102.0,2,09
+10,Servizi di istruzione,2018,84.0,2,10
+11,Servizi di ristoranti e servizi di alloggio,2018,104.0,2,11
+12,Servizi finanziari e assicurativi,2018,104.0,2,12
+13,"Assistenza alla persona, protezione sociale e beni e servizi vari",2018,103.0,2,13
+011,Prodotti Alimentari,2018,104.0,3,01
+012,Bevande analcoliche,2018,101.0,3,01
+021,Bevande alcoliche,2018,104.0,3,02
+023,Tabacco,2018,106.0,3,02
+031,Abbigliamento,2018,101.0,3,03
+032,Calzature,2018,100.0,3,03
+041,Canoni di affitto effettivamente pagati per l'abitazione,2018,101.0,3,04
+043,"Manutenzione, riparazioni e sicurezza dell'abitazione",2018,102.0,3,04
+044,Distribuzione d'acqua e servizi vari connessi con l'abitazione,2018,105.0,3,04
+045,"Elettricità, gas e altri combustibili",2018,103.0,3,04
+051,"Mobili, arredamenti e tappeti",2018,102.0,3,05
+052,Tessili per la casa,2018,99.0,3,05
+053,Elettrodomestici,2018,98.0,3,05
+054,"Oggetti di vetro, stoviglie e utensili domestici",2018,101.0,3,05
+055,Utensili e attrezzature per la casa e il giardino,2018,99.0,3,05
+056,Beni e servizi per la manutenzione corrente dell'abitazione,2018,100.0,3,05
+061,Prodotti medicinali e sanitari,2018,97.0,3,06
+062,Servizi di cure ambulatoriali,2018,102.0,3,06
+063,Servizi di cure ospedaliere,2018,102.0,3,06
+064,Altri servizi sanitari,2018,101.0,3,06
+071,Acquisto di veicoli,2018,101.0,3,07
+072,Utilizzazione di mezzi personali di trasporto,2018,105.0,3,07
+073,Servizi di trasporto passeggeri,2018,111.0,3,07
+074,Servizi di trasporto merci,2018,104.0,3,07
+081,Apparecchiature per l'informazione e la comunicazione,2018,90.0,3,08
+083,Servizi d'informazione e comunicazione,2018,98.0,3,08
+091,Beni ricreativi durevoli,2018,104.0,3,09
+092,Altri beni ricreativi,2018,97.0,3,09
+093,Prodotti per il giardino e animali da compagnia,2018,100.0,3,09
+094,Servizi ricreativi,2018,101.0,3,09
+095,Beni culturali,2018,109.0,3,09
+096,Servizi culturali,2018,103.0,3,09
+097,"Giornali, libri e articoli di cartoleria",2018,104.0,3,09
+098,"Viaggi ""tutto compreso""",2018,109.0,3,09
+101,Istruzione prescolastica ed elementare,2018,106.0,3,10
+102,Istruzione secondaria,2018,101.0,3,10
+104,Istruzione universitaria,2018,58.0,3,10
+105,Istruzione non definita per livello,2018,102.0,3,10
+111,Servizi di ristorazione e di vendita di bevande,2018,104.0,3,11
+112,Servizi di alloggio,2018,103.0,3,11
+121,Servizi assicurativi,2018,102.0,3,12
+122,Servizi finanziari,2018,105.0,3,12
+131,Cura della persona,2018,101.0,3,13
+132,Altri effetti personali,2018,103.0,3,13
+133,Protezione sociale,2018,102.0,3,13
+139,Altri servizi,2018,108.0,3,13
+00,Indice generale,2019,103.0,2,00
+01,Prodotti alimentari e bevande analcoliche,2019,104.0,2,01
+02,"Bevande alcoliche, tabacco e droghe",2019,107.0,2,02
+03,Abbigliamento e calzature,2019,101.0,2,03
+04,"Abitazione, acqua, elettricità, gas e altri combustibili",2019,104.0,2,04
+05,"Arredamenti, apparecchi per uso domestico e manutenzione corrente dell'abitazione",2019,101.0,2,05
+06,Sanità,2019,101.0,2,06
+07,Trasporti,2019,106.0,2,07
+08,Informazione e comunicazione,2019,87.0,2,08
+09,"Ricreazione, sport e cultura",2019,103.0,2,09
+10,Servizi di istruzione,2019,84.0,2,10
+11,Servizi di ristoranti e servizi di alloggio,2019,105.0,2,11
+12,Servizi finanziari e assicurativi,2019,106.0,2,12
+13,"Assistenza alla persona, protezione sociale e beni e servizi vari",2019,105.0,2,13
+011,Prodotti Alimentari,2019,105.0,3,01
+012,Bevande analcoliche,2019,101.0,3,01
+021,Bevande alcoliche,2019,104.0,3,02
+023,Tabacco,2019,109.0,3,02
+031,Abbigliamento,2019,102.0,3,03
+032,Calzature,2019,99.0,3,03
+041,Canoni di affitto effettivamente pagati per l'abitazione,2019,101.0,3,04
+043,"Manutenzione, riparazioni e sicurezza dell'abitazione",2019,103.0,3,04
+044,Distribuzione d'acqua e servizi vari connessi con l'abitazione,2019,106.0,3,04
+045,"Elettricità, gas e altri combustibili",2019,105.0,3,04
+051,"Mobili, arredamenti e tappeti",2019,103.0,3,05
+052,Tessili per la casa,2019,99.0,3,05
+053,Elettrodomestici,2019,94.0,3,05
+054,"Oggetti di vetro, stoviglie e utensili domestici",2019,101.0,3,05
+055,Utensili e attrezzature per la casa e il giardino,2019,99.0,3,05
+056,Beni e servizi per la manutenzione corrente dell'abitazione,2019,101.0,3,05
+061,Prodotti medicinali e sanitari,2019,97.0,3,06
+062,Servizi di cure ambulatoriali,2019,103.0,3,06
+063,Servizi di cure ospedaliere,2019,102.0,3,06
+064,Altri servizi sanitari,2019,101.0,3,06
+071,Acquisto di veicoli,2019,103.0,3,07
+072,Utilizzazione di mezzi personali di trasporto,2019,105.0,3,07
+073,Servizi di trasporto passeggeri,2019,114.0,3,07
+074,Servizi di trasporto merci,2019,105.0,3,07
+081,Apparecchiature per l'informazione e la comunicazione,2019,80.0,3,08
+083,Servizi d'informazione e comunicazione,2019,93.0,3,08
+091,Beni ricreativi durevoli,2019,104.0,3,09
+092,Altri beni ricreativi,2019,96.0,3,09
+093,Prodotti per il giardino e animali da compagnia,2019,101.0,3,09
+094,Servizi ricreativi,2019,101.0,3,09
+095,Beni culturali,2019,113.0,3,09
+096,Servizi culturali,2019,104.0,3,09
+097,"Giornali, libri e articoli di cartoleria",2019,105.0,3,09
+098,"Viaggi ""tutto compreso""",2019,112.0,3,09
+101,Istruzione prescolastica ed elementare,2019,107.0,3,10
+102,Istruzione secondaria,2019,102.0,3,10
+104,Istruzione universitaria,2019,57.0,3,10
+105,Istruzione non definita per livello,2019,104.0,3,10
+111,Servizi di ristorazione e di vendita di bevande,2019,105.0,3,11
+112,Servizi di alloggio,2019,104.0,3,11
+121,Servizi assicurativi,2019,102.0,3,12
+122,Servizi finanziari,2019,111.0,3,12
+131,Cura della persona,2019,101.0,3,13
+132,Altri effetti personali,2019,104.0,3,13
+133,Protezione sociale,2019,103.0,3,13
+139,Altri servizi,2019,111.0,3,13
+00,Indice generale,2020,103.0,2,00
+01,Prodotti alimentari e bevande analcoliche,2020,106.0,2,01
+02,"Bevande alcoliche, tabacco e droghe",2020,110.0,2,02
+03,Abbigliamento e calzature,2020,102.0,2,03
+04,"Abitazione, acqua, elettricità, gas e altri combustibili",2020,101.0,2,04
+05,"Arredamenti, apparecchi per uso domestico e manutenzione corrente dell'abitazione",2020,101.0,2,05
+06,Sanità,2020,102.0,2,06
+07,Trasporti,2020,103.0,2,07
+08,Informazione e comunicazione,2020,84.0,2,08
+09,"Ricreazione, sport e cultura",2020,103.0,2,09
+10,Servizi di istruzione,2020,84.0,2,10
+11,Servizi di ristoranti e servizi di alloggio,2020,105.0,2,11
+12,Servizi finanziari e assicurativi,2020,109.0,2,12
+13,"Assistenza alla persona, protezione sociale e beni e servizi vari",2020,106.0,2,13
+011,Prodotti Alimentari,2020,106.0,3,01
+012,Bevande analcoliche,2020,101.0,3,01
+021,Bevande alcoliche,2020,104.0,3,02
+023,Tabacco,2020,112.0,3,02
+031,Abbigliamento,2020,103.0,3,03
+032,Calzature,2020,99.0,3,03
+041,Canoni di affitto effettivamente pagati per l'abitazione,2020,101.0,3,04
+043,"Manutenzione, riparazioni e sicurezza dell'abitazione",2020,103.0,3,04
+044,Distribuzione d'acqua e servizi vari connessi con l'abitazione,2020,106.0,3,04
+045,"Elettricità, gas e altri combustibili",2020,96.0,3,04
+051,"Mobili, arredamenti e tappeti",2020,103.0,3,05
+052,Tessili per la casa,2020,100.0,3,05
+053,Elettrodomestici,2020,94.0,3,05
+054,"Oggetti di vetro, stoviglie e utensili domestici",2020,102.0,3,05
+055,Utensili e attrezzature per la casa e il giardino,2020,100.0,3,05
+056,Beni e servizi per la manutenzione corrente dell'abitazione,2020,102.0,3,05
+061,Prodotti medicinali e sanitari,2020,97.0,3,06
+062,Servizi di cure ambulatoriali,2020,104.0,3,06
+063,Servizi di cure ospedaliere,2020,102.0,3,06
+064,Altri servizi sanitari,2020,102.0,3,06
+071,Acquisto di veicoli,2020,104.0,3,07
+072,Utilizzazione di mezzi personali di trasporto,2020,101.0,3,07
+073,Servizi di trasporto passeggeri,2020,111.0,3,07
+074,Servizi di trasporto merci,2020,106.0,3,07
+081,Apparecchiature per l'informazione e la comunicazione,2020,73.0,3,08
+083,Servizi d'informazione e comunicazione,2020,91.0,3,08
+091,Beni ricreativi durevoli,2020,105.0,3,09
+092,Altri beni ricreativi,2020,96.0,3,09
+093,Prodotti per il giardino e animali da compagnia,2020,102.0,3,09
+094,Servizi ricreativi,2020,102.0,3,09
+095,Beni culturali,2020,109.0,3,09
+096,Servizi culturali,2020,105.0,3,09
+097,"Giornali, libri e articoli di cartoleria",2020,106.0,3,09
+098,"Viaggi ""tutto compreso""",2020,108.0,3,09
+101,Istruzione prescolastica ed elementare,2020,108.0,3,10
+102,Istruzione secondaria,2020,102.0,3,10
+104,Istruzione universitaria,2020,56.0,3,10
+105,Istruzione non definita per livello,2020,105.0,3,10
+111,Servizi di ristorazione e di vendita di bevande,2020,106.0,3,11
+112,Servizi di alloggio,2020,102.0,3,11
+121,Servizi assicurativi,2020,101.0,3,12
+122,Servizi finanziari,2020,116.0,3,12
+131,Cura della persona,2020,102.0,3,13
+132,Altri effetti personali,2020,108.0,3,13
+133,Protezione sociale,2020,104.0,3,13
+139,Altri servizi,2020,113.0,3,13
+00,Indice generale,2021,105.0,2,00
+01,Prodotti alimentari e bevande analcoliche,2021,106.0,2,01
+02,"Bevande alcoliche, tabacco e droghe",2021,110.0,2,02
+03,Abbigliamento e calzature,2021,103.0,2,03
+04,"Abitazione, acqua, elettricità, gas e altri combustibili",2021,108.0,2,04
+05,"Arredamenti, apparecchi per uso domestico e manutenzione corrente dell'abitazione",2021,102.0,2,05
+06,Sanità,2021,103.0,2,06
+07,Trasporti,2021,108.0,2,07
+08,Informazione e comunicazione,2021,82.0,2,08
+09,"Ricreazione, sport e cultura",2021,104.0,2,09
+10,Servizi di istruzione,2021,82.0,2,10
+11,Servizi di ristoranti e servizi di alloggio,2021,107.0,2,11
+12,Servizi finanziari e assicurativi,2021,110.0,2,12
+13,"Assistenza alla persona, protezione sociale e beni e servizi vari",2021,107.0,2,13
+011,Prodotti Alimentari,2021,107.0,3,01
+012,Bevande analcoliche,2021,101.0,3,01
+021,Bevande alcoliche,2021,103.0,3,02
+023,Tabacco,2021,114.0,3,02
+031,Abbigliamento,2021,104.0,3,03
+032,Calzature,2021,99.0,3,03
+041,Canoni di affitto effettivamente pagati per l'abitazione,2021,102.0,3,04
+043,"Manutenzione, riparazioni e sicurezza dell'abitazione",2021,104.0,3,04
+044,Distribuzione d'acqua e servizi vari connessi con l'abitazione,2021,108.0,3,04
+045,"Elettricità, gas e altri combustibili",2021,111.0,3,04
+051,"Mobili, arredamenti e tappeti",2021,105.0,3,05
+052,Tessili per la casa,2021,100.0,3,05
+053,Elettrodomestici,2021,94.0,3,05
+054,"Oggetti di vetro, stoviglie e utensili domestici",2021,102.0,3,05
+055,Utensili e attrezzature per la casa e il giardino,2021,100.0,3,05
+056,Beni e servizi per la manutenzione corrente dell'abitazione,2021,102.0,3,05
+061,Prodotti medicinali e sanitari,2021,98.0,3,06
+062,Servizi di cure ambulatoriali,2021,105.0,3,06
+063,Servizi di cure ospedaliere,2021,103.0,3,06
+064,Altri servizi sanitari,2021,103.0,3,06
+071,Acquisto di veicoli,2021,106.0,3,07
+072,Utilizzazione di mezzi personali di trasporto,2021,108.0,3,07
+073,Servizi di trasporto passeggeri,2021,114.0,3,07
+074,Servizi di trasporto merci,2021,108.0,3,07
+081,Apparecchiature per l'informazione e la comunicazione,2021,69.0,3,08
+083,Servizi d'informazione e comunicazione,2021,91.0,3,08
+091,Beni ricreativi durevoli,2021,109.0,3,09
+092,Altri beni ricreativi,2021,97.0,3,09
+093,Prodotti per il giardino e animali da compagnia,2021,104.0,3,09
+094,Servizi ricreativi,2021,103.0,3,09
+095,Beni culturali,2021,107.0,3,09
+096,Servizi culturali,2021,106.0,3,09
+097,"Giornali, libri e articoli di cartoleria",2021,107.0,3,09
+098,"Viaggi ""tutto compreso""",2021,104.0,3,09
+101,Istruzione prescolastica ed elementare,2021,110.0,3,10
+102,Istruzione secondaria,2021,101.0,3,10
+104,Istruzione universitaria,2021,50.0,3,10
+105,Istruzione non definita per livello,2021,105.0,3,10
+111,Servizi di ristorazione e di vendita di bevande,2021,108.0,3,11
+112,Servizi di alloggio,2021,105.0,3,11
+121,Servizi assicurativi,2021,99.0,3,12
+122,Servizi finanziari,2021,121.0,3,12
+131,Cura della persona,2021,103.0,3,13
+132,Altri effetti personali,2021,110.0,3,13
+133,Protezione sociale,2021,106.0,3,13
+139,Altri servizi,2021,114.0,3,13
+00,Indice generale,2022,113.0,2,00
+01,Prodotti alimentari e bevande analcoliche,2022,116.0,2,01
+02,"Bevande alcoliche, tabacco e droghe",2022,111.0,2,02
+03,Abbigliamento e calzature,2022,104.0,2,03
+04,"Abitazione, acqua, elettricità, gas e altri combustibili",2022,145.0,2,04
+05,"Arredamenti, apparecchi per uso domestico e manutenzione corrente dell'abitazione",2022,107.0,2,05
+06,Sanità,2022,104.0,2,06
+07,Trasporti,2022,119.0,2,07
+08,Informazione e comunicazione,2022,79.0,2,08
+09,"Ricreazione, sport e cultura",2022,107.0,2,09
+10,Servizi di istruzione,2022,82.0,2,10
+11,Servizi di ristoranti e servizi di alloggio,2022,114.0,2,11
+12,Servizi finanziari e assicurativi,2022,112.0,2,12
+13,"Assistenza alla persona, protezione sociale e beni e servizi vari",2022,110.0,2,13
+011,Prodotti Alimentari,2022,117.0,3,01
+012,Bevande analcoliche,2022,108.0,3,01
+021,Bevande alcoliche,2022,106.0,3,02
+023,Tabacco,2022,114.0,3,02
+031,Abbigliamento,2022,106.0,3,03
+032,Calzature,2022,99.0,3,03
+041,Canoni di affitto effettivamente pagati per l'abitazione,2022,103.0,3,04
+043,"Manutenzione, riparazioni e sicurezza dell'abitazione",2022,108.0,3,04
+044,Distribuzione d'acqua e servizi vari connessi con l'abitazione,2022,110.0,3,04
+045,"Elettricità, gas e altri combustibili",2022,206.0,3,04
+051,"Mobili, arredamenti e tappeti",2022,112.0,3,05
+052,Tessili per la casa,2022,104.0,3,05
+053,Elettrodomestici,2022,99.0,3,05
+054,"Oggetti di vetro, stoviglie e utensili domestici",2022,106.0,3,05
+055,Utensili e attrezzature per la casa e il giardino,2022,103.0,3,05
+056,Beni e servizi per la manutenzione corrente dell'abitazione,2022,107.0,3,05
+061,Prodotti medicinali e sanitari,2022,97.0,3,06
+062,Servizi di cure ambulatoriali,2022,106.0,3,06
+063,Servizi di cure ospedaliere,2022,104.0,3,06
+064,Altri servizi sanitari,2022,104.0,3,06
+071,Acquisto di veicoli,2022,112.0,3,07
+072,Utilizzazione di mezzi personali di trasporto,2022,120.0,3,07
+073,Servizi di trasporto passeggeri,2022,129.0,3,07
+074,Servizi di trasporto merci,2022,115.0,3,07
+081,Apparecchiature per l'informazione e la comunicazione,2022,63.0,3,08
+083,Servizi d'informazione e comunicazione,2022,91.0,3,08
+091,Beni ricreativi durevoli,2022,124.0,3,09
+092,Altri beni ricreativi,2022,98.0,3,09
+093,Prodotti per il giardino e animali da compagnia,2022,111.0,3,09
+094,Servizi ricreativi,2022,103.0,3,09
+095,Beni culturali,2022,118.0,3,09
+096,Servizi culturali,2022,109.0,3,09
+097,"Giornali, libri e articoli di cartoleria",2022,110.0,3,09
+098,"Viaggi ""tutto compreso""",2022,104.0,3,09
+101,Istruzione prescolastica ed elementare,2022,112.0,3,10
+102,Istruzione secondaria,2022,101.0,3,10
+104,Istruzione universitaria,2022,48.0,3,10
+105,Istruzione non definita per livello,2022,106.0,3,10
+111,Servizi di ristorazione e di vendita di bevande,2022,114.0,3,11
+112,Servizi di alloggio,2022,117.0,3,11
+121,Servizi assicurativi,2022,99.0,3,12
+122,Servizi finanziari,2022,125.0,3,12
+131,Cura della persona,2022,105.0,3,13
+132,Altri effetti personali,2022,113.0,3,13
+133,Protezione sociale,2022,108.0,3,13
+139,Altri servizi,2022,116.0,3,13
+00,Indice generale,2023,120.0,2,00
+01,Prodotti alimentari e bevande analcoliche,2023,128.0,2,01
+02,"Bevande alcoliche, tabacco e droghe",2023,115.0,2,02
+03,Abbigliamento e calzature,2023,108.0,2,03
+04,"Abitazione, acqua, elettricità, gas e altri combustibili",2023,151.0,2,04
+05,"Arredamenti, apparecchi per uso domestico e manutenzione corrente dell'abitazione",2023,114.0,2,05
+06,Sanità,2023,105.0,2,06
+07,Trasporti,2023,123.0,2,07
+08,Informazione e comunicazione,2023,78.0,2,08
+09,"Ricreazione, sport e cultura",2023,112.0,2,09
+10,Servizi di istruzione,2023,83.0,2,10
+11,Servizi di ristoranti e servizi di alloggio,2023,122.0,2,11
+12,Servizi finanziari e assicurativi,2023,117.0,2,12
+13,"Assistenza alla persona, protezione sociale e beni e servizi vari",2023,114.0,2,13
+011,Prodotti Alimentari,2023,128.0,3,01
+012,Bevande analcoliche,2023,119.0,3,01
+021,Bevande alcoliche,2023,113.0,3,02
+023,Tabacco,2023,116.0,3,02
+031,Abbigliamento,2023,109.0,3,03
+032,Calzature,2023,101.0,3,03
+041,Canoni di affitto effettivamente pagati per l'abitazione,2023,105.0,3,04
+043,"Manutenzione, riparazioni e sicurezza dell'abitazione",2023,111.0,3,04
+044,Distribuzione d'acqua e servizi vari connessi con l'abitazione,2023,113.0,3,04
+045,"Elettricità, gas e altri combustibili",2023,196.0,3,04
+051,"Mobili, arredamenti e tappeti",2023,118.0,3,05
+052,Tessili per la casa,2023,108.0,3,05
+053,Elettrodomestici,2023,104.0,3,05
+054,"Oggetti di vetro, stoviglie e utensili domestici",2023,110.0,3,05
+055,Utensili e attrezzature per la casa e il giardino,2023,107.0,3,05
+056,Beni e servizi per la manutenzione corrente dell'abitazione,2023,116.0,3,05
+061,Prodotti medicinali e sanitari,2023,99.0,3,06
+062,Servizi di cure ambulatoriali,2023,109.0,3,06
+063,Servizi di cure ospedaliere,2023,106.0,3,06
+064,Altri servizi sanitari,2023,106.0,3,06
+071,Acquisto di veicoli,2023,119.0,3,07
+072,Utilizzazione di mezzi personali di trasporto,2023,122.0,3,07
+073,Servizi di trasporto passeggeri,2023,139.0,3,07
+074,Servizi di trasporto merci,2023,121.0,3,07
+081,Apparecchiature per l'informazione e la comunicazione,2023,63.0,3,08
+083,Servizi d'informazione e comunicazione,2023,92.0,3,08
+091,Beni ricreativi durevoli,2023,140.0,3,09
+092,Altri beni ricreativi,2023,99.0,3,09
+093,Prodotti per il giardino e animali da compagnia,2023,120.0,3,09
+094,Servizi ricreativi,2023,103.0,3,09
+095,Beni culturali,2023,116.0,3,09
+096,Servizi culturali,2023,112.0,3,09
+097,"Giornali, libri e articoli di cartoleria",2023,114.0,3,09
+098,"Viaggi ""tutto compreso""",2023,119.0,3,09
+101,Istruzione prescolastica ed elementare,2023,115.0,3,10
+102,Istruzione secondaria,2023,101.0,3,10
+104,Istruzione universitaria,2023,48.0,3,10
+105,Istruzione non definita per livello,2023,107.0,3,10
+111,Servizi di ristorazione e di vendita di bevande,2023,120.0,3,11
+112,Servizi di alloggio,2023,131.0,3,11
+121,Servizi assicurativi,2023,102.0,3,12
+122,Servizi finanziari,2023,133.0,3,12
+131,Cura della persona,2023,110.0,3,13
+132,Altri effetti personali,2023,117.0,3,13
+133,Protezione sociale,2023,113.0,3,13
+139,Altri servizi,2023,119.0,3,13
+00,Indice generale,2024,121.0,2,00
+01,Prodotti alimentari e bevande analcoliche,2024,131.0,2,01
+02,"Bevande alcoliche, tabacco e droghe",2024,118.0,2,02
+03,Abbigliamento e calzature,2024,109.0,2,03
+04,"Abitazione, acqua, elettricità, gas e altri combustibili",2024,142.0,2,04
+05,"Arredamenti, apparecchi per uso domestico e manutenzione corrente dell'abitazione",2024,115.0,2,05
+06,Sanità,2024,107.0,2,06
+07,Trasporti,2024,124.0,2,07
+08,Informazione e comunicazione,2024,74.0,2,08
+09,"Ricreazione, sport e cultura",2024,115.0,2,09
+10,Servizi di istruzione,2024,84.0,2,10
+11,Servizi di ristoranti e servizi di alloggio,2024,127.0,2,11
+12,Servizi finanziari e assicurativi,2024,121.0,2,12
+13,"Assistenza alla persona, protezione sociale e beni e servizi vari",2024,117.0,2,13
+011,Prodotti Alimentari,2024,131.0,3,01
+012,Bevande analcoliche,2024,124.0,3,01
+021,Bevande alcoliche,2024,113.0,3,02
+023,Tabacco,2024,120.0,3,02
+031,Abbigliamento,2024,111.0,3,03
+032,Calzature,2024,102.0,3,03
+041,Canoni di affitto effettivamente pagati per l'abitazione,2024,109.0,3,04
+043,"Manutenzione, riparazioni e sicurezza dell'abitazione",2024,114.0,3,04
+044,Distribuzione d'acqua e servizi vari connessi con l'abitazione,2024,117.0,3,04
+045,"Elettricità, gas e altri combustibili",2024,163.0,3,04
+051,"Mobili, arredamenti e tappeti",2024,120.0,3,05
+052,Tessili per la casa,2024,110.0,3,05
+053,Elettrodomestici,2024,101.0,3,05
+054,"Oggetti di vetro, stoviglie e utensili domestici",2024,111.0,3,05
+055,Utensili e attrezzature per la casa e il giardino,2024,108.0,3,05
+056,Beni e servizi per la manutenzione corrente dell'abitazione,2024,116.0,3,05
+061,Prodotti medicinali e sanitari,2024,100.0,3,06
+062,Servizi di cure ambulatoriali,2024,111.0,3,06
+063,Servizi di cure ospedaliere,2024,107.0,3,06
+064,Altri servizi sanitari,2024,107.0,3,06
+071,Acquisto di veicoli,2024,121.0,3,07
+072,Utilizzazione di mezzi personali di trasporto,2024,122.0,3,07
+073,Servizi di trasporto passeggeri,2024,142.0,3,07
+074,Servizi di trasporto merci,2024,123.0,3,07
+081,Apparecchiature per l'informazione e la comunicazione,2024,56.0,3,08
+083,Servizi d'informazione e comunicazione,2024,93.0,3,08
+091,Beni ricreativi durevoli,2024,144.0,3,09
+092,Altri beni ricreativi,2024,100.0,3,09
+093,Prodotti per il giardino e animali da compagnia,2024,123.0,3,09
+094,Servizi ricreativi,2024,105.0,3,09
+095,Beni culturali,2024,121.0,3,09
+096,Servizi culturali,2024,114.0,3,09
+097,"Giornali, libri e articoli di cartoleria",2024,116.0,3,09
+098,"Viaggi ""tutto compreso""",2024,132.0,3,09
+101,Istruzione prescolastica ed elementare,2024,119.0,3,10
+102,Istruzione secondaria,2024,100.0,3,10
+104,Istruzione universitaria,2024,50.0,3,10
+105,Istruzione non definita per livello,2024,108.0,3,10
+111,Servizi di ristorazione e di vendita di bevande,2024,124.0,3,11
+112,Servizi di alloggio,2024,138.0,3,11
+121,Servizi assicurativi,2024,108.0,3,12
+122,Servizi finanziari,2024,134.0,3,12
+131,Cura della persona,2024,112.0,3,13
+132,Altri effetti personali,2024,121.0,3,13
+133,Protezione sociale,2024,116.0,3,13
+139,Altri servizi,2024,121.0,3,13
+00,Indice generale,2025,123.0,2,00
+01,Prodotti alimentari e bevande analcoliche,2025,134.0,2,01
+02,"Bevande alcoliche, tabacco e droghe",2025,120.0,2,02
+03,Abbigliamento e calzature,2025,110.0,2,03
+04,"Abitazione, acqua, elettricità, gas e altri combustibili",2025,144.0,2,04
+05,"Arredamenti, apparecchi per uso domestico e manutenzione corrente dell'abitazione",2025,115.0,2,05
+06,Sanità,2025,109.0,2,06
+07,Trasporti,2025,123.0,2,07
+08,Informazione e comunicazione,2025,71.0,2,08
+09,"Ricreazione, sport e cultura",2025,117.0,2,09
+10,Servizi di istruzione,2025,87.0,2,10
+11,Servizi di ristoranti e servizi di alloggio,2025,131.0,2,11
+12,Servizi finanziari e assicurativi,2025,125.0,2,12
+13,"Assistenza alla persona, protezione sociale e beni e servizi vari",2025,120.0,2,13
+011,Prodotti Alimentari,2025,135.0,3,01
+012,Bevande analcoliche,2025,134.0,3,01
+021,Bevande alcoliche,2025,112.0,3,02
+023,Tabacco,2025,124.0,3,02
+031,Abbigliamento,2025,112.0,3,03
+032,Calzature,2025,102.0,3,03
+041,Canoni di affitto effettivamente pagati per l'abitazione,2025,113.0,3,04
+043,"Manutenzione, riparazioni e sicurezza dell'abitazione",2025,116.0,3,04
+044,Distribuzione d'acqua e servizi vari connessi con l'abitazione,2025,120.0,3,04
+045,"Elettricità, gas e altri combustibili",2025,162.0,3,04
+051,"Mobili, arredamenti e tappeti",2025,121.0,3,05
+052,Tessili per la casa,2025,111.0,3,05
+053,Elettrodomestici,2025,100.0,3,05
+054,"Oggetti di vetro, stoviglie e utensili domestici",2025,112.0,3,05
+055,Utensili e attrezzature per la casa e il giardino,2025,109.0,3,05
+056,Beni e servizi per la manutenzione corrente dell'abitazione,2025,116.0,3,05
+061,Prodotti medicinali e sanitari,2025,101.0,3,06
+062,Servizi di cure ambulatoriali,2025,112.0,3,06
+063,Servizi di cure ospedaliere,2025,109.0,3,06
+064,Altri servizi sanitari,2025,109.0,3,06
+071,Acquisto di veicoli,2025,121.0,3,07
+072,Utilizzazione di mezzi personali di trasporto,2025,121.0,3,07
+073,Servizi di trasporto passeggeri,2025,144.0,3,07
+074,Servizi di trasporto merci,2025,125.0,3,07
+081,Apparecchiature per l'informazione e la comunicazione,2025,51.0,3,08
+083,Servizi d'informazione e comunicazione,2025,94.0,3,08
+091,Beni ricreativi durevoli,2025,145.0,3,09
+092,Altri beni ricreativi,2025,100.0,3,09
+093,Prodotti per il giardino e animali da compagnia,2025,124.0,3,09
+094,Servizi ricreativi,2025,108.0,3,09
+095,Beni culturali,2025,123.0,3,09
+096,Servizi culturali,2025,118.0,3,09
+097,"Giornali, libri e articoli di cartoleria",2025,119.0,3,09
+098,"Viaggi ""tutto compreso""",2025,142.0,3,09
+101,Istruzione prescolastica ed elementare,2025,121.0,3,10
+102,Istruzione secondaria,2025,100.0,3,10
+104,Istruzione universitaria,2025,52.0,3,10
+105,Istruzione non definita per livello,2025,111.0,3,10
+111,Servizi di ristorazione e di vendita di bevande,2025,128.0,3,11
+112,Servizi di alloggio,2025,142.0,3,11
+121,Servizi assicurativi,2025,113.0,3,12
+122,Servizi finanziari,2025,137.0,3,12
+131,Cura della persona,2025,113.0,3,13
+132,Altri effetti personali,2025,129.0,3,13
+133,Protezione sociale,2025,119.0,3,13
+139,Altri servizi,2025,124.0,3,13

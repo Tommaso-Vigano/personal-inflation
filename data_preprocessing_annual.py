@@ -88,13 +88,28 @@ annual_indices["Osservazione"] = pd.to_numeric(
 # For the moment I select only the 12 top-level categories
 annual_indices["ECOICOP_2"] = annual_indices["ECOICOP_2"].astype(str)
 
-divisions = annual_indices[
-    annual_indices["ECOICOP_2"].str.fullmatch(r"\d{2}")
-    & (annual_indices["ECOICOP_2"] != "00")
+# Keep:
+# 00  = official general index
+# XX  = main categories
+# XXX = subcategories
+selected_indices = annual_indices[
+    annual_indices["ECOICOP_2"].eq("00")
+    | annual_indices["ECOICOP_2"].str.fullmatch(r"\d{2,3}", na=False)
 ].copy()
 
+selected_indices["category_level"] = (
+    selected_indices["ECOICOP_2"].str.len()
+)
+
+selected_indices["parent_code"] = (
+    selected_indices["ECOICOP_2"].str[:2]
+)
+
 categories = (
-    divisions[["ECOICOP_2", "ECOICOP 2"]]
+    selected_indices[
+        (selected_indices["category_level"] == 2)
+        & (selected_indices["ECOICOP_2"] != "00")
+    ][["ECOICOP_2", "ECOICOP 2"]]
     .drop_duplicates()
     .sort_values("ECOICOP_2")
 )
@@ -103,144 +118,17 @@ print(categories.to_string(index=False))
 
 # =================================================================================================================
 
-# Read personal expenses specified by the user, perform some safety checks
-expenses = pd.read_csv(
-    "data/input/personal_expense.csv",
-    dtype={"ECOICOP_2": str}
-)
-
-# Check if negative expenses
-if (expenses["annual_expense"] < 0).any():
-    raise ValueError("Expenses cannot be negative")
-
-total_expense = expenses["annual_expense"].sum()
-
-# Check if we have expenses
-if total_expense == 0:
-    raise ValueError("Total expenditure must be greater than zero")
-
-# Create a new column "personal weight" that stores the weight of each category
-expenses["personal_weight"] = (
-    expenses["annual_expense"] / total_expense
-)
-
-# Merges ISTAT data with personal weights
-personal_data = divisions.merge(
-    expenses,
-    on="ECOICOP_2", # match rows using the category code
-    how="inner", # keep only categories present in both tables
-    validate="many_to_one" # divisions can contain many rows for each code—one per year—but expenses
-                           # must contain each code only once
-)
-
-# Personal contribution of each category
-personal_data["contribution"] = (
-    personal_data["personal_weight"]
-    * personal_data["Osservazione"]
-)
-
-
-# sum the contribution of all the categories by year and rename the col
-personal_indices = (
-    personal_data
-    .groupby("TIME_PERIOD", as_index=False)["contribution"]
-    .sum()
-    .rename(columns={"contribution": "personal_index"})
-    .sort_values("TIME_PERIOD")
-)
-
-personal_indices["personal_inflation"] = (
-    personal_indices["personal_index"]
-    .pct_change(fill_method=None)
-    .mul(100)
-)
-
-official_indices = annual_indices[
-    annual_indices["ECOICOP_2"] == "00"
-][["TIME_PERIOD", "Osservazione"]].copy()
-
-official_indices = (
-    official_indices
-    .rename(columns={"Osservazione": "istat_index"})
-    .sort_values("TIME_PERIOD")
-)
-
-official_indices["istat_inflation"] = (
-    official_indices["istat_index"]
-    .pct_change()
-    .mul(100)
-)
-
-comparison = personal_indices.merge(
-    official_indices,
-    on="TIME_PERIOD",
-    how="inner"
-)
-
-print(
-    comparison[
-        [
-            "TIME_PERIOD",
-            "personal_inflation",
-            "istat_inflation"
-        ]
-    ].to_string(index=False)
-)
-
-# ============================================== Plotting ============================================================
-plot_data = comparison.dropna(
-    subset=["personal_inflation", "istat_inflation"]
-)
-
-plt.figure(figsize=(10, 6))
-
-plt.plot(
-    plot_data["TIME_PERIOD"],
-    plot_data["personal_inflation"],
-    marker="o",
-    linewidth=2,
-    label="Personal inflation"
-)
-
-plt.plot(
-    plot_data["TIME_PERIOD"],
-    plot_data["istat_inflation"],
-    marker="o",
-    linewidth=2,
-    label="ISTAT inflation"
-)
-
-plt.axhline(
-    y=0,
-    color="black",
-    linewidth=0.8
-)
-
-plt.title("Personal inflation compared with ISTAT inflation")
-plt.xlabel("Year")
-plt.ylabel("Annual inflation (%)")
-
-plt.grid(
-    True,
-    linestyle="--",
-    alpha=0.4
-)
-
-plt.legend()
-plt.tight_layout()
-plt.show()
-
-# ====================================================================================================================
 
 # Saving on GitHub the processed dataset
-processed_indices = annual_indices[
-    annual_indices["ECOICOP_2"].str.fullmatch(r"\d{2}")
-][
+# Save the general index, main categories and subcategories
+processed_indices = selected_indices[
     [
         "ECOICOP_2",
         "ECOICOP 2",
         "TIME_PERIOD",
-        "Osservazione"
+        "Osservazione",
+        "category_level",
+        "parent_code"
     ]
 ].copy()
 
@@ -248,7 +136,9 @@ processed_indices = (
     processed_indices
     .dropna(subset=["TIME_PERIOD", "Osservazione"])
     .drop_duplicates()
-    .sort_values(["TIME_PERIOD", "ECOICOP_2"])
+    .sort_values(
+        ["TIME_PERIOD", "category_level", "ECOICOP_2"]
+    )
 )
 
 output_path = Path("data/processed/annual_indices.csv")
@@ -258,3 +148,10 @@ processed_indices.to_csv(output_path, index=False)
 
 print(f"Saved processed data to {output_path}")
 print(processed_indices.shape)
+
+print("\nNumber of categories by level:")
+print(
+    processed_indices
+    .groupby("category_level")["ECOICOP_2"]
+    .nunique()
+)
