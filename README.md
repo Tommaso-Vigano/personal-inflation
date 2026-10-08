@@ -1,179 +1,363 @@
-# Predicting Sleep Apnea from Polysomnography
+# Personal Inflation Calculator
 
-A multimodal machine-learning study that combines overnight EEG recordings with patient-level physiological data to predict obstructive sleep apnea severity.
+![Python](https://img.shields.io/badge/Python-3.10%2B-3776AB?logo=python&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Built%20with-Streamlit-FF4B4B?logo=streamlit&logoColor=white)
+![Data](https://img.shields.io/badge/Data-ISTAT-0066CC)
 
-The project investigates both classification and regression formulations, compares several EEG representations, and evaluates models ranging from regularized logistic regression to attention-based neural networks. A central goal is to understand what can be learned reliably from a small, imbalanced clinical dataset without leaking patient-specific information across training and evaluation sets.
+A Streamlit application that estimates how inflation affects an individual consumer based on their actual spending habits.
 
-## Research question
+Official inflation describes the price evolution of a representative national basket. Real households, however, do not all distribute their expenditure in the same way. Someone who spends a large share on transport may experience price changes differently from someone whose budget is concentrated on housing, food, or services.
 
-Can sleep apnea severity be predicted from six-channel overnight EEG recordings together with physiological patient information?
+This project lets users build a personal consumer basket, calculates a reweighted historical inflation series, and compares it with the official Italian ISTAT inflation index.
 
-We study two related formulations:
+<!-- After deploying the app, add the public link here:
+[Open the live application](https://YOUR-APP-NAME.streamlit.app)
+-->
 
-- **Classification:** directly predict an apnea-severity category.
-- **Regression:** predict the Apnea-Hypopnea Index (AHI), then map the result to a severity category.
+## Screenshots
 
-AHI is the number of apnea and hypopnea events per hour of sleep:
+The following image paths are already prepared. Create the folder `assets/screenshots`, add your screenshots with the filenames below, and remove the surrounding HTML comments.
+
+<!--
+### Build your basket
+
+![Personal inflation basket input](assets/screenshots/basket-input.png)
+
+### Explore your results
+
+![Personal inflation results dashboard](assets/screenshots/results-dashboard.png)
+
+### Understand the difference
+
+![Comparison between personal and ISTAT spending weights](assets/screenshots/spending-insights.png)
+-->
+
+## Main features
+
+- Build a basket using either **annual amounts in euros** or **percentage shares**.
+- Choose between broad ECOICOP divisions and more detailed subcategories.
+- Calculate a personal historical inflation series from ISTAT price indices.
+- Compare personal inflation with the official Italian NIC index.
+- View the latest personal rate, official rate, and difference in percentage points.
+- Inspect the categories in which personal spending differs most from the official ISTAT basket.
+- Explore an interactive historical chart and a detailed annual results table.
+- Edit the basket without losing the previously entered values.
+- Use the application on desktop or mobile through a responsive Streamlit interface.
+
+## How to use the application
+
+### 1. Select an input method
+
+Choose one of the two available modes:
+
+- **Amounts (€):** enter estimated annual expenditure for each category. The application converts the amounts into weights automatically.
+- **Percentages (%):** enter the share of the budget assigned to each category. The values must sum to exactly 100%.
+
+Only the relative distribution matters. For example, an annual basket of `€4,000`, `€3,000`, and `€3,000` produces the same weights as `40%`, `30%`, and `30%`.
+
+### 2. Build the personal basket
+
+Enter a value for each relevant main category, such as:
+
+- food and non-alcoholic beverages;
+- housing and utilities;
+- transport;
+- health;
+- recreation and culture;
+- restaurants and accommodation.
+
+Enable **Use detailed categories** when a more precise breakdown is useful. Transport, for example, can be divided into vehicle purchases, use of personal transport, passenger transport, and transport of goods.
+
+The application avoids counting a main category and its subcategories at the same time: each division is represented either by its total or by the detailed values selected by the user.
+
+### 3. Calculate the result
+
+Click **Calculate inflation**. The application validates the input, constructs the personal weights, applies them to the historical category indices, and opens a separate results view.
+
+### 4. Interpret the dashboard
+
+The results page contains:
+
+- **Personal inflation:** the estimated annual rate for the selected basket;
+- **ISTAT inflation:** the official annual rate for the general NIC index;
+- **Difference:** personal inflation minus official inflation, expressed in percentage points;
+- **Historical comparison:** an interactive chart showing both series over time;
+- **Spending insight:** a pop-up identifying where the personal basket assigns substantially more or less weight than ISTAT;
+- **Detailed results:** the annual values used in the chart.
+
+A positive difference does not mean that every item became more expensive. It means that the categories receiving greater weight in the personal basket experienced, in combination, a larger price increase than the official basket.
+
+## Methodology
+
+Let $e_i$ be the expenditure entered for category $i$. The personal weight is:
 
 $$
-\mathrm{AHI} = \frac{N_{\mathrm{apnea}} + N_{\mathrm{hypopnea}}}{\mathrm{recording\ time\ in\ hours}}
+w_i = \frac{e_i}{\sum_j e_j}
 $$
 
-## Dataset
+The weights therefore sum to one. When percentages are entered directly, the same normalization is obtained after validation.
 
-The analysis uses the [Polysomnographic sleep data](https://www.kaggle.com/datasets/yfrite/polysom) dataset.
+For every year $t$, the personal price index is calculated as a weighted combination of the category-level price indices:
 
-- 40 patients, with up to two recorded nights per patient
-- 80 recordings initially; 2 recordings removed because of severe artifacts
-- approximately 8 hours of EEG per recording, sampled at 200 Hz
-- six EEG channels: `Fp1-M2`, `C3-M2`, `O1-M2`, `Fp2-M1`, `C4-M1`, and `O2-M1`
-- patient and night-level variables such as age, sex, height, weight, pulse, blood pressure, oxygen desaturation index (ODI), apnea index (AI), hypopnea index (HI), and AHI
+$$
+P_t^{\text{personal}} = \sum_i w_i P_{i,t}
+$$
 
-For the main three-class experiments, the original mild and moderate groups are merged:
+The personal annual inflation rate is then:
 
-| Class | AHI range |
-| --- | ---: |
-| Healthy / asymptomatic | `< 5` |
-| Mild-moderate | `5-29` |
-| Severe | `>= 30` |
+$$
+\pi_t^{\text{personal}}
+=
+\left(
+\frac{P_t^{\text{personal}}}{P_{t-1}^{\text{personal}}} - 1
+\right) \times 100
+$$
 
-## Main challenges
+The official comparison series is calculated from the general ISTAT index identified by ECOICOP code `00`:
 
-- **Very small sample size:** only 78 usable nights are available.
-- **High dimensionality:** one night contains millions of EEG samples for a single global label.
-- **Class imbalance:** observations are concentrated around healthy and severe cases.
-- **Repeated patients:** two nights from the same patient are strongly related and must never be split across training and test data.
-- **Weak supervision:** AHI is provided at the night level, not for individual 60-second windows.
-- **Multimodal fusion:** EEG-derived features and patient-level physiological variables have different scales and structures.
+$$
+\pi_t^{\text{ISTAT}}
+=
+\left(
+\frac{P_t^{\text{ISTAT}}}{P_{t-1}^{\text{ISTAT}}} - 1
+\right) \times 100
+$$
 
-## Pipeline
+The application applies the same personal spending distribution to every historical year. The output should therefore be interpreted as a counterfactual estimate: **how historical price changes would have affected the currently selected consumer profile**.
 
-```mermaid
-flowchart TD
-    A["Raw EEG + patient data"] --> B["Signal preprocessing"]
-    B --> C["60-second EEG windows"]
-    C --> D["EEG feature extraction"]
-    D --> E["Night-level representation"]
-    E --> F["Multimodal fusion"]
-    F --> G["Classification or AHI regression"]
-    G --> H["Patient-wise evaluation"]
+## Data
+
+The project uses data published by the Italian National Institute of Statistics (**ISTAT**):
+
+- annual national consumer price indices;
+- the general NIC index for the entire population;
+- ECOICOP product categories and subcategories;
+- the official 2026 NIC weighting structure.
+
+In 2026, ISTAT adopted ECOICOP version 2, organized into 13 expenditure divisions. The preprocessing scripts clean the downloaded files, repair malformed rows where necessary, select the relevant hierarchy levels, and generate the compact CSV files used by the application.
+
+Official sources:
+
+- [ISTAT consumer-price data](https://www.istat.it/tavole-di-dati/prezzi-al-consumo-dati/)
+- [ISTAT 2026 basket and weighting structure](https://www.istat.it/comunicato-stampa/gli-indici-dei-prezzi-al-consumo-anno-2026/)
+
+### Processed files
+
+| File | Purpose |
+| --- | --- |
+| `data/processed/annual_indices.csv` | Annual general, division-level, and subcategory price indices |
+| `data/processed/istat_weights_2026.csv` | Official 2026 NIC basket weights by main division |
+
+Raw ISTAT files can be kept locally and excluded from Git when they are large. The processed files required by the deployed application must remain in the repository.
+
+## Project structure
+
+```text
+personal-inflation/
+├── app.py
+├── requirements.txt
+├── README.md
+├── data/
+│   └── processed/
+│       ├── annual_indices.csv
+│       └── istat_weights_2026.csv
+├── src/
+│   ├── __init__.py
+│   └── inflation.py
+├── data_preprocessing_annual.py
+└── weights_preprocessing.py
 ```
 
-### 1. EEG preprocessing
+### Main components
 
-The recordings are cleaned using:
+- `app.py` contains the Streamlit interface, navigation, visual styling, input validation, charts, and explanatory insights.
+- `src/inflation.py` contains the personal inflation and basket-weight comparison logic.
+- `data_preprocessing_annual.py` prepares the annual ISTAT price-index dataset.
+- `weights_preprocessing.py` converts the official ISTAT weighting spreadsheet into the format used by the app.
 
-- a 50 Hz notch filter to remove power-line interference;
-- a 1-50 Hz band-pass filter to suppress baseline drift and high-frequency noise;
-- Independent Component Analysis (ICA) to reduce ocular, cardiac, and muscular artifacts;
-- segmentation into 60-second epochs.
+## Run the project locally
 
-### 2. EEG representations
+### Prerequisites
 
-Several representations are compared:
+- Python 3.10 or newer;
+- Git;
+- the processed CSV files included in the repository.
 
-- **Raw spectral power:** power spectral density is integrated over physiologically meaningful frequency bands for every channel and time window.
-- **Wavelet features:** a Daubechies-4 discrete wavelet transform produces multiresolution subbands; energy, mean absolute value, and standard deviation summarize each subband.
-- **Power FPCA:** Functional Principal Component Analysis describes the temporal evolution of band power across the night.
-- **Hybrid embeddings:** window-level statistics and physiologically motivated features are aggregated into fixed-length night representations.
+### 1. Clone the repository
 
-PCA and UMAP are used as exploratory tools to assess whether the representations preserve severity-related structure. Wavelet and raw-power features appear more informative than the FPCA representation for this dataset.
+```bash
+git clone https://github.com/Tommaso-Vigano/personal-inflation.git
+cd personal-inflation
+```
 
-### 3. Leakage-safe multimodal modeling
+### 2. Create a virtual environment
 
-EEG embeddings are concatenated with patient-level physiological features. All learned preprocessing operations - including scaling, PCA, feature selection, and any data-dependent embedding transformation - are fitted on the training fold only.
+On Windows PowerShell:
 
-Splits are performed at the **patient level**, ensuring that all nights belonging to one patient remain in the same fold. This prevents the model from exploiting patient-specific patterns and producing overoptimistic results.
+```powershell
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+```
 
-## Models explored
+On macOS or Linux:
 
-### Classification
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
 
-- multinomial logistic regression with L1 regularization;
-- two-stage ordinal classification using the thresholds `AHI >= 5` and `AHI >= 30`;
-- PCA followed by logistic regression;
-- random forest classification.
+### 3. Install the dependencies
 
-### Regression
+```bash
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
 
-- gradient boosting regression to predict AHI, followed by clinical thresholding.
+The minimum runtime dependencies are:
 
-### Neural architecture
+```txt
+streamlit
+pandas
+plotly
+```
 
-An attention-based multimodal network is also explored. It:
+`openpyxl` is additionally required only when running `weights_preprocessing.py` on the original Excel workbook.
 
-1. embeds each EEG window;
-2. learns attention weights over the sequence of windows;
-3. computes a weighted night-level EEG representation;
-4. embeds the patient-level variables;
-5. combines both representations in a shared backbone;
-6. uses separate heads for apnea classification and AHI regression.
+### 4. Start the application
 
-L1 regularization and dropout are used to limit overfitting. Because the dataset contains only 78 usable recordings, the neural results are treated as exploratory rather than clinically conclusive.
+```bash
+streamlit run app.py
+```
 
-## Evaluation
+Streamlit will display a local address, normally `http://localhost:8501`.
 
-The evaluation emphasizes metrics that remain informative under class imbalance:
+## Rebuild the processed datasets
 
-- macro F1 score;
-- per-class precision, recall, and F1 score;
-- one-vs-rest ROC-AUC;
-- confusion matrices;
-- regression residual analysis;
-- nested or patient-grouped cross-validation for model selection and evaluation.
+The application itself reads only the processed CSV files. Rebuilding them is optional and requires the original ISTAT downloads in the expected local paths.
 
-## Results and observations
+Install the preprocessing dependency:
 
-The main experimental findings are:
+```bash
+pip install openpyxl
+```
 
-- **Healthy subjects are consistently the easiest to recognize.**
-- **The middle severity group is the most difficult**, because it overlaps with both healthy and severe cases.
-- The direct L1-logistic model achieved one-vs-rest AUC values of **0.95**, **0.67**, and **0.75** for healthy, mild-moderate, and severe cases, respectively.
-- PCA improved the balance of the middle class in some folds, but performance remained highly variable because of the low sample size and multicollinearity.
-- The random forest produced the strongest class separation among the classical classifiers, with one-vs-rest AUC values of **0.99**, **0.86**, and **0.89**.
-- Gradient boosting regression classified healthy subjects reasonably well, but often mapped moderate cases to the severe class and underestimated very high AHI values.
-- The attention model provides interpretable saliency weights over time. High-attention windows correlate with changes in spectral centroid and low/high-frequency power ratio, suggesting that the model focuses on physiologically meaningful EEG patterns.
+Then run:
 
-These results should be interpreted cautiously: the number of independent patients is small, and uncertainty across folds is substantial.
+```bash
+python data_preprocessing_annual.py
+python weights_preprocessing.py
+```
 
-## Key conclusions
+Review the generated files before committing them, particularly after ISTAT changes its classification, base year, or published schema.
 
-1. Patient-wise splitting is essential; sample-wise splitting would leak patient identity.
-2. EEG representations based on spectral power and wavelets are more promising than FPCA in this setting.
-3. Random forests are comparatively robust for the available sample size, although the mild-moderate class remains challenging.
-4. Direct AHI regression is unstable near severity thresholds and at the high end of the target distribution.
-5. Attention-based networks are attractive because they preserve temporal structure and offer window-level interpretability, but substantially more data is needed for reliable generalization.
+## Deploy on Streamlit Community Cloud
+
+### 1. Push the project to GitHub
+
+Make sure the following deployment files are committed:
+
+- `app.py`;
+- `src/inflation.py`;
+- `requirements.txt`;
+- `data/processed/annual_indices.csv`;
+- `data/processed/istat_weights_2026.csv`.
+
+Then push the current version:
+
+```bash
+git add .
+git commit -m "Prepare Streamlit deployment"
+git push
+```
+
+### 2. Create the Streamlit application
+
+1. Open [Streamlit Community Cloud](https://share.streamlit.io/).
+2. Sign in with the GitHub account that owns the repository.
+3. Select **Create app** and choose **Deploy a public app from GitHub**.
+4. Use these values:
+   - repository: `Tommaso-Vigano/personal-inflation`;
+   - branch: `main`;
+   - main file path: `app.py`.
+5. Choose an available application URL.
+6. Click **Deploy**.
+
+Streamlit installs the packages listed in `requirements.txt`, starts `app.py`, and provides a public `.streamlit.app` URL.
+
+### 3. Publish future updates
+
+The deployment remains connected to the GitHub repository. To update the live application:
+
+```bash
+git add .
+git commit -m "Describe the update"
+git push
+```
+
+Streamlit normally detects the new commit and rebuilds the app automatically. If it does not, open **Manage app** from the deployed application and select **Reboot app**.
+
+### Common deployment problems
+
+| Error | Likely cause | Solution |
+| --- | --- | --- |
+| `This branch does not exist` | The branch has not been pushed or has another name | Run `git branch -M main` followed by `git push -u origin main` |
+| `ModuleNotFoundError: plotly` | `plotly` is missing from `requirements.txt` | Add it, commit, and push again |
+| `ModuleNotFoundError: src` | The `src` directory was not committed | Commit `src/__init__.py` and `src/inflation.py` |
+| `FileNotFoundError` for a CSV | A processed data file is absent or ignored | Commit both files under `data/processed/` |
+| App does not reflect a new commit | The deployment has not rebuilt yet | Wait briefly or reboot it from **Manage app** |
+
+## Adding screenshots to this README
+
+Create the screenshot directory:
+
+```bash
+mkdir -p assets/screenshots
+```
+
+On Windows, you can also create `assets` and `screenshots` directly from PyCharm.
+
+Recommended filenames:
+
+```text
+assets/screenshots/basket-input.png
+assets/screenshots/results-dashboard.png
+assets/screenshots/spending-insights.png
+```
+
+Then remove the HTML comment markers around the prepared image section near the beginning of this README and push the images:
+
+```bash
+git add README.md assets/screenshots
+git commit -m "Add application screenshots"
+git push
+```
 
 ## Limitations
 
-- only 40 patients and 78 usable nights;
-- strong class imbalance and an unusual concentration of healthy observations at `AHI = 0`;
-- one global label for an entire night, with no event-level annotations;
-- results are sensitive to the patient composition of each fold;
-- EEG alone may not contain all information required for reliable apnea diagnosis;
-- no external clinical cohort was available for validation.
+- The result is an estimate, not an official personalized statistic produced by ISTAT.
+- Spending weights are assumed to remain constant throughout the historical period.
+- The calculation does not model substitutions between products when relative prices change.
+- Accuracy depends on the detail and quality of the expenditure entered by the user.
+- Annual indices cannot describe short-term differences within a year.
+- Categories that are broad or unavailable at the chosen level may hide substantial variation among individual products.
 
-## Future work
+## Possible improvements
 
-- validate the pipeline on a larger, independent cohort;
-- add event-level apnea and hypopnea annotations;
-- incorporate additional polysomnographic signals such as oxygen saturation, airflow, respiratory effort, ECG, and EOG;
-- investigate class-balanced losses and calibrated ordinal models;
-- use self-supervised pretraining on unlabeled EEG recordings;
-- model spatial relationships between electrodes and temporal relationships between windows explicitly;
-- quantify predictive uncertainty and assess calibration before any clinical use.
-
-## Team
-
-- Matteo Piacentini
-- Tommaso Viganò
-- Lorenzo Zani
-
-## References
-
-1. A. Subasi and E. Ercelebi, *Classification of EEG signals using neural network and logistic regression*.
-2. A. S. Al-Fahoum and A. A. Al-Fraihat, *Methods of EEG Signal Features Extraction Using Linear Analysis in Frequency and Time-Frequency Domains*.
+- support monthly inflation estimates;
+- allow users to save or export baskets and results;
+- add shareable result summaries;
+- visualize the complete difference between personal and official basket weights;
+- update ISTAT weights automatically when a new annual structure is published;
+- add tests for preprocessing, category selection, and inflation calculations;
+- provide Italian and English interface options.
 
 ## Disclaimer
 
-This project is an academic machine-learning study. It is not a medical device and must not be used for diagnosis or treatment decisions.
+This project is intended for educational and informational purposes. It is not financial advice, and its output should not be interpreted as an official ISTAT measure.
+
+## Author
+
+**Tommaso Viganò**
+
+- GitHub: [@Tommaso-Vigano](https://github.com/Tommaso-Vigano)
+
