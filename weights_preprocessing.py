@@ -3,7 +3,7 @@ from pathlib import Path
 import pandas as pd
 
 
-weights_path = "data/raw/istat_weights_2026.xlsx"
+weights_path = "../data/raw/istat_weights_2026.xlsx"
 
 # Row 3 of the spreadsheet contains the real column names.
 # Using positional columns avoids problems with spaces in their names.
@@ -64,7 +64,7 @@ division_weights = (
 )
 
 output_path = Path(
-    "data/processed/istat_weights_2026.csv"
+    "../data/processed/istat_weights_2026.csv"
 )
 
 output_path.parent.mkdir(

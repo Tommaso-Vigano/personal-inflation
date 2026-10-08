@@ -8,7 +8,7 @@ we want to use ( just to be clear, you can look at the variation of the price of
 a particular cheese)
 """
 
-file_path = "data/raw/istat_data.csv"
+file_path = "../data/raw/istat_data.csv"
 
 df = pd.read_csv(
     file_path,
@@ -155,7 +155,7 @@ processed_indices = (
     )
 )
 
-output_path = Path("data/processed/annual_indices.csv")
+output_path = Path("../data/processed/annual_indices.csv")
 output_path.parent.mkdir(parents=True, exist_ok=True)
 
 processed_indices.to_csv(output_path, index=False)
