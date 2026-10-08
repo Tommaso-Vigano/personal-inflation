@@ -24,6 +24,12 @@ Choose one of the two available modes:
 
 Only the relative distribution matters. For example, an annual basket of `€4,000`, `€3,000`, and `€3,000` produces the same weights as `40%`, `30%`, and `30%`.
 
+<p align="center">
+  <img src="images/first-step-tutorial.png"
+       alt="Personal inflation results"
+       width="800">
+</p>
+
 ### 2. Build the personal basket
 
 Enter a value for each relevant main category, such as:
@@ -36,14 +42,30 @@ Enter a value for each relevant main category, such as:
 - restaurants and accommodation.
 
 Enable **Use detailed categories** when a more precise breakdown is useful. Transport, for example, can be divided into vehicle purchases, use of personal transport, passenger transport, and transport of goods.
-
+<p align="center">
+  <img src="images/second-step-tutorial.png"
+       alt="Personal inflation results"
+       width="800">
+</p>
 The application avoids counting a main category and its subcategories at the same time: each division is represented either by its total or by the detailed values selected by the user.
 
 ### 3. Calculate the result
 
 Click **Calculate inflation**. The application validates the input, constructs the personal weights, applies them to the historical category indices, and opens a separate results view.
 
+<p align="center">
+  <img src="images/third-step-tutorial.png"
+       alt="Personal inflation results"
+       width="800">
+</p>
+
 ### 4. Interpret the dashboard
+
+<p align="center">
+  <img src="images/fourth-step-tutorial.png"
+       alt="Personal inflation results"
+       width="800">
+</p>
 
 The results page contains:
 
