@@ -75,8 +75,7 @@ $$
 The personal annual inflation rate is then:
 
 $$
-\pi_t^{\text{personal}}
-=
+\pi_t^{\text{personal}} =
 \left(
 \frac{P_t^{\text{personal}}}{P_{t-1}^{\text{personal}}} - 1
 \right) \times 100
@@ -85,8 +84,7 @@ $$
 The official comparison series is calculated from the general ISTAT index identified by ECOICOP code `00`:
 
 $$
-\pi_t^{\text{ISTAT}}
-=
+\pi_t^{\text{ISTAT}}=
 \left(
 \frac{P_t^{\text{ISTAT}}}{P_{t-1}^{\text{ISTAT}}} - 1
 \right) \times 100
