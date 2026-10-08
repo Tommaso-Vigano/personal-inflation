@@ -20,6 +20,20 @@ df = pd.read_csv(
     low_memory=False
 )
 
+measure_columns = [
+    column
+    for column in df.columns
+    if "MEASURE" in column.upper()
+    or "MISUR" in column.upper()
+]
+
+print(
+    df[measure_columns]
+    .drop_duplicates()
+    .sort_values(measure_columns)
+    .to_string(index=False)
+)
+
 df = df[df["REF_AREA"] == "IT"].copy()
 # MEASURE = 4 contains the price indices
 annual_indices = df[df["MEASURE"] == 4].copy()
@@ -155,3 +169,34 @@ print(
     .groupby("category_level")["ECOICOP_2"]
     .nunique()
 )
+
+categories = (
+    selected_indices[
+        (selected_indices["category_level"] == 2)
+        & (selected_indices["ECOICOP_2"] != "00")
+    ][["ECOICOP_2", "ECOICOP 2"]]
+    .drop_duplicates()
+    .sort_values("ECOICOP_2")
+)
+
+# Extract three-digit subcategories
+subcategories = (
+    selected_indices[
+        selected_indices["category_level"] == 3
+    ][
+        [
+            "ECOICOP_2",
+            "ECOICOP 2",
+            "parent_code"
+        ]
+    ]
+    .drop_duplicates()
+    .sort_values(["parent_code", "ECOICOP_2"])
+    .reset_index(drop=True)
+)
+
+print("\nMain categories:")
+print(categories.to_string(index=False))
+
+print("\nSubcategories:")
+print(subcategories.to_string(index=False))
